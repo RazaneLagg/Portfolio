@@ -7,487 +7,119 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <style>
     :root {
-      --bg: #F5F2ED;
-      --ink: #1A1714;
-      --ink-light: #6B6560;
-      --accent: #C8472A;
-      --accent-light: #F0E8E4;
-      --rule: #D8D2C8;
-      --card-bg: #FDFAF7;
-      --tag-bg: #EDE8E2;
+      --bg: #F5F2ED; --ink: #1A1714; --ink-light: #6B6560;
+      --accent: #C8472A; --accent-light: #F0E8E4;
+      --rule: #D8D2C8; --card-bg: #FDFAF7; --tag-bg: #EDE8E2;
     }
-
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--bg);
-      color: var(--ink);
-      font-size: 15px;
-      line-height: 1.65;
-      overflow-x: hidden;
-    }
-
-    /* NAV */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 1.2rem 4rem;
-      background: rgba(245,242,237,0.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--rule);
-    }
-    .nav-logo {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.15rem;
-      letter-spacing: 0.01em;
-      color: var(--ink);
-      text-decoration: none;
-    }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--ink); font-size: 15px; line-height: 1.65; overflow-x: hidden; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.2rem 4rem; background: rgba(245,242,237,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--rule); }
+    .nav-logo { font-family: 'DM Serif Display', serif; font-size: 1.15rem; color: var(--ink); text-decoration: none; }
     .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-    .nav-links a {
-      text-decoration: none;
-      color: var(--ink-light);
-      font-size: 0.85rem;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      transition: color 0.2s;
-    }
+    .nav-links a { text-decoration: none; color: var(--ink-light); font-size: 0.85rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
     .nav-links a:hover { color: var(--accent); }
-
-    /* HERO */
-    .hero {
-      min-height: 100vh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      padding: 0 4rem;
-      padding-top: 80px;
-      align-items: center;
-      gap: 4rem;
-      border-bottom: 1px solid var(--rule);
-    }
+    .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; padding: 0 4rem; padding-top: 80px; align-items: center; gap: 4rem; border-bottom: 1px solid var(--rule); }
     .hero-left { padding-right: 2rem; }
-    .hero-eyebrow {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.75rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 1.5rem;
-      display: flex; align-items: center; gap: 0.8rem;
-    }
-    .hero-eyebrow::before {
-      content: '';
-      display: block; width: 2rem; height: 1px;
-      background: var(--accent);
-    }
-    h1 {
-      font-family: 'DM Serif Display', serif;
-      font-size: clamp(3rem, 5vw, 4.5rem);
-      line-height: 1.05;
-      letter-spacing: -0.02em;
-      margin-bottom: 1.5rem;
-    }
-    h1 em {
-      font-style: italic;
-      color: var(--accent);
-    }
-    .hero-desc {
-      font-size: 1rem;
-      color: var(--ink-light);
-      max-width: 38ch;
-      margin-bottom: 2.5rem;
-      line-height: 1.75;
-    }
-    .hero-cta {
-      display: flex; gap: 1rem; flex-wrap: wrap;
-    }
-    .btn {
-      padding: 0.8rem 1.8rem;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 0.05em;
-      text-decoration: none;
-      border: 1.5px solid var(--ink);
-      cursor: pointer;
-      transition: all 0.2s;
-      display: inline-flex; align-items: center; gap: 0.5rem;
-    }
+    .hero-eyebrow { font-family: 'DM Mono', monospace; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.8rem; }
+    .hero-eyebrow::before { content: ''; display: block; width: 2rem; height: 1px; background: var(--accent); }
+    h1 { font-family: 'DM Serif Display', serif; font-size: clamp(3rem, 5vw, 4.5rem); line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 1.5rem; }
+    h1 em { font-style: italic; color: var(--accent); }
+    .hero-desc { font-size: 1rem; color: var(--ink-light); max-width: 38ch; margin-bottom: 2.5rem; line-height: 1.75; }
+    .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn { padding: 0.8rem 1.8rem; font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.05em; text-decoration: none; border: 1.5px solid var(--ink); cursor: pointer; transition: all 0.2s; display: inline-flex; align-items: center; gap: 0.5rem; }
     .btn-primary { background: var(--ink); color: var(--bg); }
     .btn-primary:hover { background: var(--accent); border-color: var(--accent); }
     .btn-outline { background: transparent; color: var(--ink); }
     .btn-outline:hover { background: var(--ink); color: var(--bg); }
-
-    .hero-right {
-      display: flex; flex-direction: column; gap: 1.2rem;
-    }
-    .stat-row {
-      display: grid; grid-template-columns: 1fr 1fr 1fr;
-      gap: 1px;
-      background: var(--rule);
-      border: 1px solid var(--rule);
-    }
-    .stat-box {
-      background: var(--card-bg);
-      padding: 1.5rem;
-      text-align: center;
-    }
-    .stat-num {
-      font-family: 'DM Serif Display', serif;
-      font-size: 2.2rem;
-      color: var(--accent);
-      display: block;
-    }
-    .stat-label {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.7rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--ink-light);
-    }
-    .skills-strip {
-      border: 1px solid var(--rule);
-      background: var(--card-bg);
-      padding: 1.5rem;
-    }
-    .skills-strip-title {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.7rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--ink-light);
-      margin-bottom: 0.8rem;
-    }
-    .skills-tags {
-      display: flex; flex-wrap: wrap; gap: 0.4rem;
-    }
-    .tag {
-      background: var(--tag-bg);
-      color: var(--ink);
-      font-family: 'DM Mono', monospace;
-      font-size: 0.72rem;
-      padding: 0.3rem 0.7rem;
-      letter-spacing: 0.04em;
-    }
+    .hero-right { display: flex; flex-direction: column; gap: 1.2rem; }
+    .stat-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
+    .stat-box { background: var(--card-bg); padding: 1.5rem; text-align: center; }
+    .stat-num { font-family: 'DM Serif Display', serif; font-size: 2.2rem; color: var(--accent); display: block; }
+    .stat-label { font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-light); }
+    .skills-strip { border: 1px solid var(--rule); background: var(--card-bg); padding: 1.5rem; }
+    .skills-strip-title { font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-light); margin-bottom: 0.8rem; }
+    .skills-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .tag { background: var(--tag-bg); color: var(--ink); font-family: 'DM Mono', monospace; font-size: 0.72rem; padding: 0.3rem 0.7rem; letter-spacing: 0.04em; }
     .tag.accent { background: var(--accent); color: white; }
-    .lang-row {
-      display: flex; gap: 1rem;
-    }
-    .lang-box {
-      flex: 1;
-      border: 1px solid var(--rule);
-      background: var(--card-bg);
-      padding: 1rem;
-      text-align: center;
-    }
-    .lang-level {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.1rem;
-    }
-    .lang-name {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.68rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--ink-light);
-      display: block;
-      margin-top: 0.2rem;
-    }
-
-    /* SECTIONS */
-    section {
-      padding: 5rem 4rem;
-      border-bottom: 1px solid var(--rule);
-    }
-    .section-header {
-      display: flex; align-items: baseline; gap: 1.5rem;
-      margin-bottom: 3rem;
-    }
-    .section-num {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.72rem;
-      color: var(--accent);
-      letter-spacing: 0.1em;
-    }
-    h2 {
-      font-family: 'DM Serif Display', serif;
-      font-size: clamp(1.8rem, 3vw, 2.5rem);
-      letter-spacing: -0.02em;
-    }
-    .section-rule {
-      flex: 1; height: 1px; background: var(--rule);
-    }
-
-    /* ABOUT */
-    .about-grid {
-      display: grid; grid-template-columns: 2fr 1fr;
-      gap: 4rem; align-items: start;
-    }
-    .about-text p {
-      color: var(--ink-light);
-      margin-bottom: 1.2rem;
-      font-size: 1rem;
-      line-height: 1.8;
-    }
+    .lang-row { display: flex; gap: 1rem; }
+    .lang-box { flex: 1; border: 1px solid var(--rule); background: var(--card-bg); padding: 1rem; text-align: center; }
+    .lang-level { font-family: 'DM Serif Display', serif; font-size: 1.1rem; }
+    .lang-name { font-family: 'DM Mono', monospace; font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-light); display: block; margin-top: 0.2rem; }
+    section { padding: 5rem 4rem; border-bottom: 1px solid var(--rule); }
+    .section-header { display: flex; align-items: baseline; gap: 1.5rem; margin-bottom: 3rem; }
+    .section-num { font-family: 'DM Mono', monospace; font-size: 0.72rem; color: var(--accent); letter-spacing: 0.1em; }
+    h2 { font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem, 3vw, 2.5rem); letter-spacing: -0.02em; }
+    .section-rule { flex: 1; height: 1px; background: var(--rule); }
+    .about-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 4rem; align-items: start; }
+    .about-text p { color: var(--ink-light); margin-bottom: 1.2rem; font-size: 1rem; line-height: 1.8; }
     .about-text p strong { color: var(--ink); }
     .about-aside { display: flex; flex-direction: column; gap: 1.5rem; }
-    .aside-block {
-      border-left: 2px solid var(--accent);
-      padding-left: 1.2rem;
-    }
-    .aside-block-label {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.68rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--ink-light);
-      margin-bottom: 0.4rem;
-    }
-    .aside-block-value {
-      font-size: 0.92rem;
-      font-weight: 500;
-    }
-
-    /* PROJECTS */
-    .projects-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 1px;
-      background: var(--rule);
-      border: 1px solid var(--rule);
-    }
-    .project-card {
-      background: var(--card-bg);
-      padding: 2.2rem;
-      transition: background 0.2s;
-      position: relative;
-    }
+    .aside-block { border-left: 2px solid var(--accent); padding-left: 1.2rem; }
+    .aside-block-label { font-family: 'DM Mono', monospace; font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--ink-light); margin-bottom: 0.4rem; }
+    .aside-block-value { font-size: 0.92rem; font-weight: 500; }
+    .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
+    .project-card { background: var(--card-bg); padding: 2.2rem; transition: background 0.2s; }
     .project-card:hover { background: #FEFCFA; }
-    .project-card.featured {
-      grid-column: 1 / -1;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      align-items: start;
-    }
-    .project-num {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.68rem;
-      letter-spacing: 0.1em;
-      color: var(--ink-light);
-      margin-bottom: 0.8rem;
-    }
-    .project-title {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.4rem;
-      letter-spacing: -0.01em;
-      margin-bottom: 0.6rem;
-      line-height: 1.2;
-    }
-    .project-subtitle {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.72rem;
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-bottom: 1rem;
-    }
-    .project-desc {
-      font-size: 0.9rem;
-      color: var(--ink-light);
-      line-height: 1.7;
-      margin-bottom: 1.2rem;
-    }
-    .project-metrics {
-      display: flex; gap: 1.5rem; margin-bottom: 1.2rem; flex-wrap: wrap;
-    }
-    .metric {
-      text-align: left;
-    }
-    .metric-val {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.5rem;
-      color: var(--accent);
-      display: block;
-    }
-    .metric-label {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.65rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--ink-light);
-    }
+    .project-card.featured { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+    .project-num { font-family: 'DM Mono', monospace; font-size: 0.68rem; letter-spacing: 0.1em; color: var(--ink-light); margin-bottom: 0.8rem; }
+    .project-title { font-family: 'DM Serif Display', serif; font-size: 1.4rem; letter-spacing: -0.01em; margin-bottom: 0.6rem; line-height: 1.2; }
+    .project-subtitle { font-family: 'DM Mono', monospace; font-size: 0.72rem; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem; }
+    .project-desc { font-size: 0.9rem; color: var(--ink-light); line-height: 1.7; margin-bottom: 1.2rem; }
+    .project-metrics { display: flex; gap: 1.5rem; margin-bottom: 1.2rem; flex-wrap: wrap; }
+    .metric-val { font-family: 'DM Serif Display', serif; font-size: 1.5rem; color: var(--accent); display: block; }
+    .metric-label { font-family: 'DM Mono', monospace; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-light); }
     .project-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
-    .project-link {
-      display: inline-flex; align-items: center; gap: 0.4rem;
-      font-family: 'DM Mono', monospace;
-      font-size: 0.75rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--ink);
-      text-decoration: none;
-      border-bottom: 1px solid var(--ink);
-      padding-bottom: 1px;
-      transition: color 0.2s, border-color 0.2s;
-    }
+    .project-links { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 0.5rem; }
+    .project-link { display: inline-flex; align-items: center; gap: 0.4rem; font-family: 'DM Mono', monospace; font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--ink); padding-bottom: 1px; transition: color 0.2s, border-color 0.2s; }
     .project-link:hover { color: var(--accent); border-color: var(--accent); }
     .project-right-col { border-left: 1px solid var(--rule); padding-left: 3rem; }
-    .models-table { width: 100%; border-collapse: collapse; margin-top: 0.5rem; }
-    .models-table th {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.65rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--ink-light);
-      text-align: left;
-      padding: 0.4rem 0.6rem;
-      border-bottom: 1px solid var(--rule);
-    }
-    .models-table td {
-      font-size: 0.82rem;
-      padding: 0.45rem 0.6rem;
-      border-bottom: 1px solid var(--rule);
-    }
+    .models-table { width: 100%; border-collapse: collapse; margin-bottom: 1rem; }
+    .models-table th { font-family: 'DM Mono', monospace; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-light); text-align: left; padding: 0.4rem 0.6rem; border-bottom: 1px solid var(--rule); }
+    .models-table td { font-size: 0.82rem; padding: 0.45rem 0.6rem; border-bottom: 1px solid var(--rule); }
     .models-table tr:last-child td { border-bottom: none; }
     .best-row td { font-weight: 600; color: var(--accent); }
-
-    /* EDUCATION */
-    .edu-list { display: flex; flex-direction: column; gap: 0; }
-    .edu-item {
-      display: grid;
-      grid-template-columns: 140px 1fr;
-      gap: 2rem;
-      padding: 2rem 0;
-      border-bottom: 1px solid var(--rule);
-      align-items: start;
-    }
+    .edu-list { display: flex; flex-direction: column; }
+    .edu-item { display: grid; grid-template-columns: 140px 1fr; gap: 2rem; padding: 2rem 0; border-bottom: 1px solid var(--rule); align-items: start; }
     .edu-item:last-child { border-bottom: none; }
-    .edu-year {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.78rem;
-      color: var(--ink-light);
-      letter-spacing: 0.05em;
-      padding-top: 0.2rem;
-    }
-    .edu-degree {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.15rem;
-      margin-bottom: 0.3rem;
-    }
-    .edu-school {
-      font-size: 0.88rem;
-      color: var(--ink-light);
-    }
-    .edu-badge {
-      display: inline-block;
-      margin-top: 0.5rem;
-      padding: 0.25rem 0.7rem;
-      background: var(--accent-light);
-      color: var(--accent);
-      font-family: 'DM Mono', monospace;
-      font-size: 0.65rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    /* CONTACT */
-    .contact-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 4rem; align-items: start;
-    }
-    .contact-intro {
-      font-size: 1rem; color: var(--ink-light); line-height: 1.8; margin-bottom: 2rem;
-    }
+    .edu-year { font-family: 'DM Mono', monospace; font-size: 0.78rem; color: var(--ink-light); letter-spacing: 0.05em; padding-top: 0.2rem; }
+    .edu-degree { font-family: 'DM Serif Display', serif; font-size: 1.15rem; margin-bottom: 0.3rem; }
+    .edu-school { font-size: 0.88rem; color: var(--ink-light); }
+    .edu-badge { display: inline-block; margin-top: 0.5rem; padding: 0.25rem 0.7rem; background: var(--accent-light); color: var(--accent); font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+    .contact-intro { font-size: 1rem; color: var(--ink-light); line-height: 1.8; margin-bottom: 2rem; }
     .contact-links { display: flex; flex-direction: column; gap: 1rem; }
-    .contact-link {
-      display: flex; align-items: center; gap: 1rem;
-      text-decoration: none; color: var(--ink);
-      padding: 1rem 1.2rem;
-      border: 1px solid var(--rule);
-      background: var(--card-bg);
-      transition: all 0.2s;
-    }
+    .contact-link { display: flex; align-items: center; gap: 1rem; text-decoration: none; color: var(--ink); padding: 1rem 1.2rem; border: 1px solid var(--rule); background: var(--card-bg); transition: all 0.2s; }
     .contact-link:hover { border-color: var(--accent); background: var(--accent-light); }
-    .contact-link-icon {
-      font-size: 1.1rem; width: 1.5rem; text-align: center;
-    }
-    .contact-link-label {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--ink-light);
-      display: block;
-      margin-bottom: 0.1rem;
-    }
+    .contact-link-icon { font-size: 1.1rem; width: 1.5rem; text-align: center; }
+    .contact-link-label { font-family: 'DM Mono', monospace; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-light); display: block; margin-bottom: 0.1rem; }
     .contact-link-value { font-size: 0.9rem; font-weight: 500; }
-    .cv-download {
-      border: 1.5px solid var(--ink);
-      padding: 2rem;
-      background: var(--card-bg);
-    }
-    .cv-download h3 {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.3rem;
-      margin-bottom: 0.8rem;
-    }
-    .cv-download p {
-      font-size: 0.88rem;
-      color: var(--ink-light);
-      margin-bottom: 1.5rem;
-      line-height: 1.7;
-    }
-
-    /* FOOTER */
-    footer {
-      padding: 2rem 4rem;
-      display: flex; align-items: center; justify-content: space-between;
-    }
-    .footer-name {
-      font-family: 'DM Serif Display', serif;
-      font-size: 0.95rem;
-    }
-    .footer-note {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.68rem;
-      color: var(--ink-light);
-      letter-spacing: 0.06em;
-    }
-
-    /* ANIMATIONS */
-    .fade-in {
-      opacity: 0; transform: translateY(20px);
-      animation: fadeUp 0.6s ease forwards;
-    }
-    @keyframes fadeUp {
-      to { opacity: 1; transform: translateY(0); }
-    }
+    .cv-download { border: 1.5px solid var(--ink); padding: 2rem; background: var(--card-bg); }
+    .cv-download h3 { font-family: 'DM Serif Display', serif; font-size: 1.3rem; margin-bottom: 0.8rem; }
+    .cv-download p { font-size: 0.88rem; color: var(--ink-light); margin-bottom: 1.5rem; line-height: 1.7; }
+    footer { padding: 2rem 4rem; display: flex; align-items: center; justify-content: space-between; }
+    .footer-name { font-family: 'DM Serif Display', serif; font-size: 0.95rem; }
+    .footer-note { font-family: 'DM Mono', monospace; font-size: 0.68rem; color: var(--ink-light); letter-spacing: 0.06em; }
+    .fade-in { opacity: 0; transform: translateY(20px); animation: fadeUp 0.6s ease forwards; }
+    @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
     .fade-in:nth-child(1) { animation-delay: 0.1s; }
     .fade-in:nth-child(2) { animation-delay: 0.2s; }
     .fade-in:nth-child(3) { animation-delay: 0.3s; }
     .fade-in:nth-child(4) { animation-delay: 0.4s; }
-
-    /* RESPONSIVE */
     @media (max-width: 900px) {
-      nav { padding: 1rem 1.5rem; }
-      .nav-links { gap: 1.2rem; }
+      nav { padding: 1rem 1.5rem; } .nav-links { gap: 1.2rem; }
       .hero, section { padding: 3rem 1.5rem; }
       .hero { grid-template-columns: 1fr; padding-top: 100px; gap: 2rem; }
       .projects-grid { grid-template-columns: 1fr; }
       .project-card.featured { grid-column: 1; grid-template-columns: 1fr; }
       .project-right-col { border-left: none; padding-left: 0; border-top: 1px solid var(--rule); padding-top: 1.5rem; }
       .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
-      .stat-row { grid-template-columns: 1fr 1fr 1fr; }
       footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
     }
   </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">R. Lagagna</a>
   <ul class="nav-links">
@@ -498,416 +130,270 @@
   </ul>
 </nav>
 
-<!-- HERO -->
-<section class="hero" style="border-top: none;">
+<section class="hero" style="border-top:none;">
   <div class="hero-left">
     <div class="hero-eyebrow fade-in">Data Science & AI Engineer</div>
     <h1 class="fade-in">Building<br/><em>intelligent</em><br/>systems.</h1>
-    <p class="hero-desc fade-in">
-      L3 Computer Science student at CY Cergy Paris, specialised in Machine Learning, Deep Learning and AI optimisation. Seeking a 2–4 month internship from April 2025.
-    </p>
+    <p class="hero-desc fade-in">L3 Computer Science student at CY Cergy Paris, specialised in Machine Learning, Deep Learning and AI optimisation. Seeking a 2-4 month internship from April 2025.</p>
     <div class="hero-cta fade-in">
-      <a href="#projects" class="btn btn-primary">View Projects →</a>
+      <a href="#projects" class="btn btn-primary">View Projects &rarr;</a>
       <a href="#contact" class="btn btn-outline">Get in Touch</a>
     </div>
   </div>
-
   <div class="hero-right fade-in">
     <div class="stat-row">
-      <div class="stat-box">
-        <span class="stat-num">5+</span>
-        <span class="stat-label">ML Projects</span>
-      </div>
-      <div class="stat-box">
-        <span class="stat-num">C1</span>
-        <span class="stat-label">English & French</span>
-      </div>
-      <div class="stat-box">
-        <span class="stat-num">3+</span>
-        <span class="stat-label">Years AI Study</span>
-      </div>
+      <div class="stat-box"><span class="stat-num">6</span><span class="stat-label">ML Projects</span></div>
+      <div class="stat-box"><span class="stat-num">C1</span><span class="stat-label">EN &amp; FR</span></div>
+      <div class="stat-box"><span class="stat-num">3+</span><span class="stat-label">Years AI</span></div>
     </div>
-
     <div class="skills-strip">
       <div class="skills-strip-title">Core Stack</div>
       <div class="skills-tags">
-        <span class="tag accent">PyTorch</span>
-        <span class="tag accent">TensorFlow</span>
-        <span class="tag accent">XGBoost</span>
-        <span class="tag">Scikit-learn</span>
-        <span class="tag">Pandas</span>
-        <span class="tag">NumPy</span>
-        <span class="tag">Python</span>
-        <span class="tag">SQL</span>
-        <span class="tag">Git</span>
-        <span class="tag">Flask</span>
-        <span class="tag">R</span>
+        <span class="tag accent">PyTorch</span><span class="tag accent">TensorFlow</span><span class="tag accent">XGBoost</span>
+        <span class="tag">Scikit-learn</span><span class="tag">Pandas</span><span class="tag">NumPy</span>
+        <span class="tag">Python</span><span class="tag">Flask</span><span class="tag">React</span><span class="tag">SQL</span><span class="tag">Git</span>
       </div>
     </div>
-
     <div class="lang-row">
-      <div class="lang-box">
-        <span class="lang-level">🇫🇷 C1</span>
-        <span class="lang-name">French — TCF</span>
-      </div>
-      <div class="lang-box">
-        <span class="lang-level">🇬🇧 C1</span>
-        <span class="lang-name">English — IELTS</span>
-      </div>
-      <div class="lang-box">
-        <span class="lang-level">🇩🇿 Native</span>
-        <span class="lang-name">Arabic</span>
-      </div>
+      <div class="lang-box"><span class="lang-level">🇫🇷 C1</span><span class="lang-name">French &mdash; TCF</span></div>
+      <div class="lang-box"><span class="lang-level">🇬🇧 C1</span><span class="lang-name">English &mdash; IELTS</span></div>
+      <div class="lang-box"><span class="lang-level">🇩🇿 Native</span><span class="lang-name">Arabic</span></div>
     </div>
   </div>
 </section>
 
-<!-- ABOUT -->
 <section id="about">
-  <div class="section-header">
-    <span class="section-num">01</span>
-    <h2>About</h2>
-    <div class="section-rule"></div>
-  </div>
+  <div class="section-header"><span class="section-num">01</span><h2>About</h2><div class="section-rule"></div></div>
   <div class="about-grid">
     <div class="about-text">
-      <p>
-        I'm a computer science student with a <strong>specialisation in Artificial Intelligence and Data Science</strong>, trained at the École Nationale Supérieure d'Intelligence Artificielle (ENSIA) in Algiers — one of North Africa's leading AI institutions — and currently completing my L3 at CY Cergy Paris Université.
-      </p>
-      <p>
-        My work spans the full ML pipeline: from raw data exploration and feature engineering to model training, evaluation and deployment. I've applied these skills to <strong>real industrial problems</strong> — including a 5-month project with an Algerian energy company — as well as academic research in deep learning, time-series forecasting and recommendation systems.
-      </p>
-      <p>
-        I'm looking for a <strong>research-oriented or applied ML internship</strong> where I can contribute to meaningful problems, grow technically, and work within a strong team culture.
-      </p>
+      <p>I'm a computer science student with a <strong>specialisation in Artificial Intelligence and Data Science</strong>, trained at the Ecole Nationale Superieure d'Intelligence Artificielle (ENSIA) in Algiers and currently completing my L3 at CY Cergy Paris Universite.</p>
+      <p>My work spans the full ML pipeline: from raw data exploration and feature engineering to model training, evaluation and deployment. I've applied these skills to <strong>real industrial problems</strong> &mdash; including a 5-month project with an Algerian energy company where I built a genetic algorithm-based scheduling system &mdash; as well as deep learning on biomedical signals, time series forecasting, and recommender systems.</p>
+      <p>I'm looking for a <strong>research-oriented or applied ML internship</strong> where I can contribute to meaningful problems, grow technically, and work within a strong team culture.</p>
     </div>
     <div class="about-aside">
-      <div class="aside-block">
-        <div class="aside-block-label">Location</div>
-        <div class="aside-block-value">Cergy, Île-de-France</div>
-      </div>
-      <div class="aside-block">
-        <div class="aside-block-label">Available</div>
-        <div class="aside-block-value">April 2025 — 2 to 4 months</div>
-      </div>
-      <div class="aside-block">
-        <div class="aside-block-label">Type</div>
-        <div class="aside-block-value">Internship (stage conventionné)</div>
-      </div>
-      <div class="aside-block">
-        <div class="aside-block-label">Focus Areas</div>
-        <div class="aside-block-value">Machine Learning · Deep Learning · Time Series · Data Mining</div>
-      </div>
+      <div class="aside-block"><div class="aside-block-label">Location</div><div class="aside-block-value">Cergy, Ile-de-France</div></div>
+      <div class="aside-block"><div class="aside-block-label">Available</div><div class="aside-block-value">April 2025 &mdash; 2 to 4 months</div></div>
+      <div class="aside-block"><div class="aside-block-label">Type</div><div class="aside-block-value">Internship (stage conventionne)</div></div>
+      <div class="aside-block"><div class="aside-block-label">Focus Areas</div><div class="aside-block-value">Machine Learning &middot; Deep Learning &middot; Time Series &middot; Optimisation</div></div>
     </div>
   </div>
 </section>
 
-<!-- PROJECTS -->
 <section id="projects">
-  <div class="section-header">
-    <span class="section-num">02</span>
-    <h2>Projects</h2>
-    <div class="section-rule"></div>
-  </div>
-
+  <div class="section-header"><span class="section-num">02</span><h2>Projects</h2><div class="section-rule"></div></div>
   <div class="projects-grid">
 
-    <!-- FEATURED: ADFC -->
     <div class="project-card featured">
       <div>
-        <div class="project-num">01 — Industrial Project · 5 months</div>
+        <div class="project-num">01 &mdash; Industrial Project &middot; 5 months &middot; Full-Stack + AI</div>
         <h3 class="project-title">AI-Powered Shift Planning Platform</h3>
-        <div class="project-subtitle">ADFC SPA · Algerian Drilling Fluids Services</div>
-        <p class="project-desc">
-          Developed an intelligent workforce scheduling platform for an industrial energy company. Modelled the problem as a Constraint Satisfaction Problem (CSP) and solved it with genetic algorithms, respecting complex HR and operational constraints on real production data.
-        </p>
+        <div class="project-subtitle">ADFC SPA &middot; Algerian Drilling Fluids Services &middot; Oil &amp; Gas</div>
+        <p class="project-desc">Full-stack web application automating workforce scheduling for ADFC's 4x4 and 6x3 oil field rotation systems. The scheduling engine uses a <strong>Genetic Algorithm</strong> to satisfy complex hard constraints (room capacity, team composition, zero conflicts) while optimising soft constraints (fair workload, team stability). Built with React + Flask + PostgreSQL via Supabase.</p>
         <div class="project-metrics">
-          <div class="metric">
-            <span class="metric-val">50+</span>
-            <span class="metric-label">Employees managed</span>
-          </div>
-          <div class="metric">
-            <span class="metric-val">40%</span>
-            <span class="metric-label">Conflict reduction</span>
-          </div>
-          <div class="metric">
-            <span class="metric-val">CSP</span>
-            <span class="metric-label">Problem formulation</span>
-          </div>
+          <div><span class="metric-val">50+</span><span class="metric-label">Employees scheduled</span></div>
+          <div><span class="metric-val">40%</span><span class="metric-label">Conflict reduction</span></div>
+          <div><span class="metric-val">9-wk</span><span class="metric-label">Chromosome window</span></div>
         </div>
         <div class="project-tags">
-          <span class="tag">Python</span>
-          <span class="tag">Genetic Algorithms</span>
-          <span class="tag">CSP</span>
-          <span class="tag">Optimisation</span>
-          <span class="tag">Industrial Data</span>
+          <span class="tag">Python</span><span class="tag">Genetic Algorithms</span><span class="tag">CSP</span>
+          <span class="tag">Flask</span><span class="tag">React</span><span class="tag">PostgreSQL</span><span class="tag">Supabase</span>
         </div>
-        <a href="https://github.com/imane-Aissat/adfc-website-2" target="_blank" class="project-link">View on GitHub ↗</a>
+        <div class="project-links">
+          <a href="https://github.com/RazaneLagg/adfc-shift-planner" target="_blank" class="project-link">My Algorithm &nearr;</a>
+          <a href="https://github.com/imane-Aissat/adfc-website-2" target="_blank" class="project-link">Full Project &nearr;</a>
+        </div>
       </div>
       <div class="project-right-col">
-        <div class="project-num" style="margin-bottom:1rem;">What I built</div>
-        <p class="project-desc">
-          The system ingests employee constraints (availability, qualifications, rest periods) and operational requirements, then uses a genetic algorithm to evolve optimal shift assignments. The solution was validated on real company data and integrated into a web interface for managers.
-        </p>
+        <div class="project-num" style="margin-bottom:1rem;">Algorithm Design</div>
+        <p class="project-desc">Each chromosome encodes a 9-week schedule per employee (team, shift type, room). The fitness function maximises soft constraint scores and penalises hard constraint violations. The GA evolves populations toward feasible, fair schedules validated on real ADFC operational data.</p>
         <div style="margin-top:1.2rem">
-          <div class="skills-strip-title" style="margin-bottom:0.6rem;">Key Contributions</div>
+          <div class="skills-strip-title" style="margin-bottom:0.6rem;">Hard Constraints Enforced</div>
           <div style="display:flex;flex-direction:column;gap:0.5rem;">
-            <div style="font-size:0.88rem;color:var(--ink-light);">✦ CSP formalisation of scheduling constraints</div>
-            <div style="font-size:0.88rem;color:var(--ink-light);">✦ Genetic algorithm design & fitness function engineering</div>
-            <div style="font-size:0.88rem;color:var(--ink-light);">✦ Validation on real industrial dataset</div>
-            <div style="font-size:0.88rem;color:var(--ink-light);">✦ Web interface integration</div>
+            <div style="font-size:0.88rem;color:var(--ink-light);">&#10022; One room per employee &mdash; max 72 rooms total</div>
+            <div style="font-size:0.88rem;color:var(--ink-light);">&#10022; 5 rooms always reserved, never allocated</div>
+            <div style="font-size:0.88rem;color:var(--ink-light);">&#10022; Fixed team: 1 supervisor + 4 members</div>
+            <div style="font-size:0.88rem;color:var(--ink-light);">&#10022; Zero room or shift conflicts allowed</div>
+            <div style="font-size:0.88rem;color:var(--ink-light);">&#10022; Role-based access: employee / HR / supervisor</div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Credit Card Fraud -->
     <div class="project-card">
-      <div class="project-num">02 — Classification · Group Project</div>
+      <div class="project-num">02 &mdash; Classification &middot; Group Project &middot; ENSIA 2024</div>
       <h3 class="project-title">Credit Card Fraud Detection</h3>
-      <div class="project-subtitle">Supervised Learning · Imbalanced Data</div>
-      <p class="project-desc">
-        Compared 8 classifiers (ANN, XGBoost, Random Forest, SVM, KNN, Logistic Regression, Naive Bayes, Decision Tree) on 284,807 transactions with extreme class imbalance (0.17% fraud rate). Applied SMOTE, undersampling and oversampling strategies.
-      </p>
+      <div class="project-subtitle">8 Classifiers &middot; Extreme Class Imbalance &middot; CRISP-DM</div>
+      <p class="project-desc">Benchmarked 8 ML classifiers on 284,807 European credit card transactions (0.17% fraud rate). Applied CRISP-DM with 70/10/20 split, Min-Max scaling, SMOTE and resampling strategies to tackle extreme class imbalance.</p>
       <div class="project-metrics">
-        <div class="metric">
-          <span class="metric-val">284K</span>
-          <span class="metric-label">Transactions</span>
-        </div>
-        <div class="metric">
-          <span class="metric-val">0.97</span>
-          <span class="metric-label">KNN AUC</span>
-        </div>
-        <div class="metric">
-          <span class="metric-val">8</span>
-          <span class="metric-label">Models compared</span>
-        </div>
+        <div><span class="metric-val">284K</span><span class="metric-label">Transactions</span></div>
+        <div><span class="metric-val">0.98</span><span class="metric-label">Best AUC</span></div>
+        <div><span class="metric-val">8</span><span class="metric-label">Models</span></div>
       </div>
       <div class="project-tags">
-        <span class="tag">Python</span>
-        <span class="tag">Scikit-learn</span>
-        <span class="tag">XGBoost</span>
-        <span class="tag">ANN</span>
-        <span class="tag">SMOTE</span>
-        <span class="tag">ROC-AUC</span>
+        <span class="tag">Python</span><span class="tag">Scikit-learn</span><span class="tag">XGBoost</span>
+        <span class="tag">PyTorch ANN</span><span class="tag">Optuna</span><span class="tag">SMOTE</span>
       </div>
-      <div style="margin-top:1.2rem;">
-        <table class="models-table">
-          <thead><tr><th>Model</th><th>Precision</th><th>Recall</th></tr></thead>
-          <tbody>
-            <tr class="best-row"><td>KNN</td><td>0.97</td><td>0.77</td></tr>
-            <tr class="best-row"><td>Random Forest</td><td>0.92</td><td>0.76</td></tr>
-            <tr><td>XGBoost</td><td>0.96</td><td>0.74</td></tr>
-            <tr><td>ANN</td><td>0.89</td><td>0.72</td></tr>
-          </tbody>
-        </table>
-        <div style="font-size:0.7rem;color:var(--ink-light);margin-top:0.4rem;font-family:'DM Mono',monospace;">My contribution: ANN & XGBoost</div>
+      <table class="models-table">
+        <thead><tr><th>Model</th><th>Precision</th><th>Recall</th><th>AUC</th></tr></thead>
+        <tbody>
+          <tr class="best-row"><td>KNN (weighted)</td><td>0.97</td><td>0.77</td><td>0.97</td></tr>
+          <tr class="best-row"><td>Random Forest</td><td>0.92</td><td>0.76</td><td>0.96</td></tr>
+          <tr><td>XGBoost</td><td>0.96</td><td>0.74</td><td>0.97</td></tr>
+          <tr><td>ANN (my contrib)</td><td>0.89</td><td>0.72</td><td>0.85</td></tr>
+        </tbody>
+      </table>
+      <div class="project-links">
+        <a href="https://github.com/RazaneLagg/credit-card-fraud-detection" target="_blank" class="project-link">View on GitHub &nearr;</a>
       </div>
     </div>
 
-    <!-- Air Quality -->
     <div class="project-card">
-      <div class="project-num">03 — Regression · Group Project</div>
+      <div class="project-num">03 &mdash; Regression &middot; Group Project &middot; ENSIA 2024</div>
       <h3 class="project-title">Air Quality Prediction</h3>
-      <div class="project-subtitle">Time Series · Multi-output Regression</div>
-      <p class="project-desc">
-        Predicted hourly concentrations of CO, NOx, NO₂ and C6H6 from 9,357 sensor records collected over 14 months in an Italian city. Built lag features, rolling averages, and compared ensemble and deep learning approaches.
-      </p>
+      <div class="project-subtitle">Multi-Output Time Series &middot; 4 Pollutants &middot; UCI Dataset</div>
+      <p class="project-desc">Predicted hourly concentrations of CO, NOx, NO2 and C6H6 from 9,357 sensor readings over 14 months in an Italian city. Engineered lag features (24h), 6h rolling averages and cyclic time features. MLP and Linear Regression with time-series split achieved best results.</p>
       <div class="project-metrics">
-        <div class="metric">
-          <span class="metric-val">9,357</span>
-          <span class="metric-label">Hourly records</span>
-        </div>
-        <div class="metric">
-          <span class="metric-val">1.00</span>
-          <span class="metric-label">C6H6 R² (MLP)</span>
-        </div>
-        <div class="metric">
-          <span class="metric-val">0.90</span>
-          <span class="metric-label">NOx R² (MLP)</span>
-        </div>
+        <div><span class="metric-val">9,357</span><span class="metric-label">Records</span></div>
+        <div><span class="metric-val">1.00</span><span class="metric-label">C6H6 R&sup2;</span></div>
+        <div><span class="metric-val">0.90</span><span class="metric-label">NOx R&sup2;</span></div>
       </div>
       <div class="project-tags">
-        <span class="tag">Python</span>
-        <span class="tag">Scikit-learn</span>
-        <span class="tag">XGBoost</span>
-        <span class="tag">MLP</span>
-        <span class="tag">Time Series</span>
-        <span class="tag">Feature Engineering</span>
+        <span class="tag">Python</span><span class="tag">XGBoost</span><span class="tag">CatBoost</span>
+        <span class="tag">MLP</span><span class="tag">Stacking</span><span class="tag">Lag Features</span>
       </div>
-      <div style="margin-top:1rem;font-size:0.8rem;color:var(--ink-light);">
-        <strong style="color:var(--ink);font-size:0.78rem;">My contribution:</strong> Ensemble learning (Stacking, Boosting), time-series supervised multi-output regression, pre-processing pipeline.
+      <div style="font-size:0.8rem;color:var(--ink-light);margin-bottom:1rem;"><strong style="color:var(--ink);">My contribution:</strong> Ensemble learning (Stacking + XGBoost/CatBoost/LightGBM), time-series multi-output regression, pre-processing pipeline.</div>
+      <div class="project-links">
+        <a href="https://github.com/RazaneLagg/air-quality-prediction" target="_blank" class="project-link">View on GitHub &nearr;</a>
       </div>
     </div>
 
-    <!-- EEG -->
     <div class="project-card">
-      <div class="project-num">04 — Deep Learning · Individual</div>
+      <div class="project-num">04 &mdash; Deep Learning &middot; Individual &middot; ENSIA 2024</div>
       <h3 class="project-title">EEG Sleep Stage Classification</h3>
-      <div class="project-subtitle">Time Series · Neural Networks · PyTorch</div>
-      <p class="project-desc">
-        End-to-end deep learning pipeline for classifying EEG signals into sleep stages. Designed preprocessing, feature extraction, and trained neural network classifiers on complex multi-class temporal data.
-      </p>
+      <div class="project-subtitle">PyTorch &middot; Biomedical Signals &middot; Time Series</div>
+      <p class="project-desc">End-to-end deep learning pipeline classifying EEG brain signals into sleep stages. Built complete preprocessing (filtering, normalisation, windowing), temporal feature extraction, and trained neural network classifiers. Tracked via learning curves and confusion matrices.</p>
       <div class="project-metrics">
-        <div class="metric">
-          <span class="metric-val">87%</span>
-          <span class="metric-label">Accuracy</span>
-        </div>
-        <div class="metric">
-          <span class="metric-val">E2E</span>
-          <span class="metric-label">Full pipeline</span>
-        </div>
+        <div><span class="metric-val">87%</span><span class="metric-label">Accuracy</span></div>
+        <div><span class="metric-val">E2E</span><span class="metric-label">Full pipeline</span></div>
       </div>
       <div class="project-tags">
-        <span class="tag">Python</span>
-        <span class="tag">PyTorch</span>
-        <span class="tag">Deep Learning</span>
-        <span class="tag">EEG Signals</span>
-        <span class="tag">Time Series</span>
+        <span class="tag">Python</span><span class="tag">PyTorch</span><span class="tag">Deep Learning</span><span class="tag">EEG</span><span class="tag">Time Series</span>
+      </div>
+      <div class="project-links" style="margin-top:1rem;">
+        <a href="https://github.com/RazaneLagg/eeg-sleep-classification" target="_blank" class="project-link">View on GitHub &nearr;</a>
       </div>
     </div>
 
-    <!-- Airplane Crashes -->
     <div class="project-card">
-      <div class="project-num">05 — Time Series Analysis · Individual</div>
+      <div class="project-num">05 &mdash; Time Series Analysis &middot; Individual &middot; ENSIA 2024</div>
       <h3 class="project-title">Airplane Crashes Forecasting</h3>
-      <div class="project-subtitle">TSA · Trend & Seasonality Analysis</div>
-      <p class="project-desc">
-        Individual time series analysis project on historical airplane crash data. Applied decomposition, stationarity tests, and forecasting models to identify trends and predict future incident patterns.
-      </p>
+      <div class="project-subtitle">TSA &middot; Decomposition &middot; ARIMA</div>
+      <p class="project-desc">Statistical time series analysis on historical airplane crash data. Applied series decomposition (trend, seasonality, residuals), stationarity testing (ADF/KPSS), differencing and log transforms, then built ARIMA/SARIMA forecasting models with residual diagnostics.</p>
       <div class="project-tags">
-        <span class="tag">Python</span>
-        <span class="tag">Pandas</span>
-        <span class="tag">Time Series</span>
-        <span class="tag">Forecasting</span>
-        <span class="tag">Statistical Analysis</span>
+        <span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Statsmodels</span><span class="tag">ARIMA</span><span class="tag">Decomposition</span>
+      </div>
+      <div class="project-links" style="margin-top:1rem;">
+        <a href="https://github.com/RazaneLagg/airplane-crashes-tsa" target="_blank" class="project-link">View on GitHub &nearr;</a>
       </div>
     </div>
 
-    <!-- Book Recommendation -->
     <div class="project-card">
-      <div class="project-num">06 — Data Mining · Group Project</div>
+      <div class="project-num">06 &mdash; Data Mining &middot; Group Project &middot; ENSIA 2024</div>
       <h3 class="project-title">Library Book Recommender System</h3>
-      <div class="project-subtitle">Collaborative Filtering · Content-Based</div>
-      <p class="project-desc">
-        Built a personalised recommendation engine for a university library using borrowing history data. Implemented both content-based and collaborative filtering approaches with qualitative evaluation on relevance and diversity.
-      </p>
+      <div class="project-subtitle">Collaborative Filtering &middot; Content-Based &middot; Data Mining</div>
+      <p class="project-desc">Personalised recommendation engine for a university library built from 5,000+ borrowing history records. Implemented content-based filtering (item similarity via cosine) and collaborative filtering (user behaviour), evaluated on relevance and diversity.</p>
       <div class="project-metrics">
-        <div class="metric">
-          <span class="metric-val">5K+</span>
-          <span class="metric-label">Borrow records</span>
-        </div>
-        <div class="metric">
-          <span class="metric-val">2</span>
-          <span class="metric-label">Filtering methods</span>
-        </div>
+        <div><span class="metric-val">5K+</span><span class="metric-label">Borrow records</span></div>
+        <div><span class="metric-val">2</span><span class="metric-label">Filtering methods</span></div>
       </div>
       <div class="project-tags">
-        <span class="tag">Python</span>
-        <span class="tag">Pandas</span>
-        <span class="tag">Scikit-learn</span>
-        <span class="tag">Data Mining</span>
-        <span class="tag">Recommender Systems</span>
+        <span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Scikit-learn</span><span class="tag">Cosine Similarity</span><span class="tag">Data Mining</span>
+      </div>
+      <div class="project-links" style="margin-top:1rem;">
+        <a href="https://github.com/RazaneLagg/book-recommender-system" target="_blank" class="project-link">View on GitHub &nearr;</a>
       </div>
     </div>
 
   </div>
 </section>
 
-<!-- EDUCATION -->
 <section id="education">
-  <div class="section-header">
-    <span class="section-num">03</span>
-    <h2>Education</h2>
-    <div class="section-rule"></div>
-  </div>
+  <div class="section-header"><span class="section-num">03</span><h2>Education</h2><div class="section-rule"></div></div>
   <div class="edu-list">
     <div class="edu-item">
-      <div class="edu-year">2025 — present</div>
+      <div class="edu-year">2025 &mdash; present</div>
       <div>
         <div class="edu-degree">Licence 3 in Computer Science</div>
-        <div class="edu-school">CY Cergy Paris Université — Cergy, France</div>
+        <div class="edu-school">CY Cergy Paris Universite &mdash; Cergy, France</div>
         <span class="edu-badge">Current</span>
+        <span class="edu-badge" style="margin-left:0.4rem;">&#127942; Top 10 / 108 &mdash; S1</span>
       </div>
     </div>
     <div class="edu-item">
-      <div class="edu-year">2024 — 2025</div>
+      <div class="edu-year">2024 &mdash; 2025</div>
       <div>
-        <div class="edu-degree">Advanced Cycle — AI & Data Science</div>
-        <div class="edu-school">École Nationale Supérieure d'Intelligence Artificielle (ENSIA), Algiers</div>
+        <div class="edu-degree">Advanced Cycle &mdash; AI &amp; Data Science</div>
+        <div class="edu-school">Ecole Nationale Superieure d'Intelligence Artificielle (ENSIA), Algiers</div>
         <span class="edu-badge">Specialisation year</span>
       </div>
     </div>
     <div class="edu-item">
-      <div class="edu-year">2022 — 2024</div>
+      <div class="edu-year">2022 &mdash; 2024</div>
       <div>
-        <div class="edu-degree">Preparatory Cycle — AI & Data Science</div>
-        <div class="edu-school">École Nationale Supérieure d'Intelligence Artificielle (ENSIA), Algiers</div>
-        <span class="edu-badge">Foundation · 2 years</span>
+        <div class="edu-degree">Preparatory Cycle &mdash; AI &amp; Data Science</div>
+        <div class="edu-school">Ecole Nationale Superieure d'Intelligence Artificielle (ENSIA), Algiers</div>
+        <span class="edu-badge">Foundation &middot; 2 years</span>
+      </div>
+    </div>
+    <div class="edu-item">
+      <div class="edu-year">2022</div>
+      <div>
+        <div class="edu-degree">Baccalaureat Scientifique</div>
+        <div class="edu-school">Algeria</div>
+        <span class="edu-badge">&#127942; 18/20 &mdash; Mention Tres Bien</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
-  <div class="section-header">
-    <span class="section-num">04</span>
-    <h2>Contact</h2>
-    <div class="section-rule"></div>
-  </div>
+  <div class="section-header"><span class="section-num">04</span><h2>Contact</h2><div class="section-rule"></div></div>
   <div class="contact-grid">
     <div>
-      <p class="contact-intro">
-        I'm actively looking for a Data Science or ML internship starting April 2025, for a duration of 2 to 4 months. If you're working on interesting problems and think we'd be a good match, I'd love to hear from you.
-      </p>
+      <p class="contact-intro">I'm actively looking for a Data Science or ML internship starting April 2025, for a duration of 2 to 4 months. If you're working on interesting problems and think we'd be a good match, I'd love to hear from you.</p>
       <div class="contact-links">
         <a href="mailto:lagagrazane@gmail.com" class="contact-link">
-          <span class="contact-link-icon">✉</span>
-          <div>
-            <span class="contact-link-label">Email</span>
-            <span class="contact-link-value">lagagrazane@gmail.com</span>
-          </div>
+          <span class="contact-link-icon">&#9993;</span>
+          <div><span class="contact-link-label">Email</span><span class="contact-link-value">lagagrazane@gmail.com</span></div>
         </a>
-        <a href="https://www.linkedin.com/in/razane-lagagna-2978a3247/" target="_blank" class="contact-link">
+        <a href="https://www.linkedin.com/in/razane-lagagna" target="_blank" class="contact-link">
           <span class="contact-link-icon">in</span>
-          <div>
-            <span class="contact-link-label">LinkedIn</span>
-            <span class="contact-link-value">Razane LAGAGNA</span>
-          </div>
+          <div><span class="contact-link-label">LinkedIn</span><span class="contact-link-value">linkedin.com/in/razane-lagagna</span></div>
         </a>
-        <a href="https://github.com/razanelagagna" target="_blank" class="contact-link">
-          <span class="contact-link-icon">⌥</span>
-          <div>
-            <span class="contact-link-label">GitHub</span>
-            <span class="contact-link-value">github.com/razanelagagna</span>
-          </div>
+        <a href="https://github.com/RazaneLagg" target="_blank" class="contact-link">
+          <span class="contact-link-icon">&#9699;</span>
+          <div><span class="contact-link-label">GitHub</span><span class="contact-link-value">github.com/RazaneLagg</span></div>
         </a>
         <a href="tel:+33743513399" class="contact-link">
-          <span class="contact-link-icon">☎</span>
-          <div>
-            <span class="contact-link-label">Phone</span>
-            <span class="contact-link-value">+33 7 43 51 33 99</span>
-          </div>
+          <span class="contact-link-icon">&#9742;</span>
+          <div><span class="contact-link-label">Phone</span><span class="contact-link-value">+33 7 43 51 33 99</span></div>
         </a>
       </div>
     </div>
     <div class="cv-download">
       <h3>Download my CV</h3>
-      <p>Full résumé with detailed project descriptions, technical skills and academic background — available in PDF format.</p>
-      <a href="cv_razane_v2.pdf" download class="btn btn-primary">Download CV (PDF) ↓</a>
+      <p>Full resume with detailed project descriptions, technical skills and academic background &mdash; available in PDF format.</p>
+      <a href="cv_razane_v2.pdf" download class="btn btn-primary">Download CV (PDF) &darr;</a>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <span class="footer-name">Razane Lagagna</span>
-  <span class="footer-note">Data Science & AI · Cergy, France · 2025</span>
+  <span class="footer-note">Data Science &amp; AI &middot; Cergy, France &middot; 2025</span>
 </footer>
 
 <script>
-  // Intersection observer for scroll animations
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -916,7 +402,6 @@
       }
     });
   }, { threshold: 0.1 });
-
   document.querySelectorAll('.project-card, .edu-item, .aside-block').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(16px)';
@@ -924,6 +409,5 @@
     observer.observe(el);
   });
 </script>
-
 </body>
 </html>
